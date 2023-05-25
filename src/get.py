@@ -4,7 +4,8 @@ import todoList
 
 
 def get(event, context):
-    # create a response depends on if id is on table or not. If id is not found, we returns error 404
+    # create a response depends on if id is on table or not.
+    # If id is not found, we returns error 404
     item = todoList.get_item(event['pathParameters']['id'])
     if item:
         response = {
