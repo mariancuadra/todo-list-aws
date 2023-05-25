@@ -6,7 +6,8 @@ import todoList
 
 def update(event, context):
     data = json.loads(event['body'])
-    #Tras obtener los parametros recibidos pasamos a validar que al menos uno de los campos a actualizar esta entre ellos. Si no se recibe ningun parametro, lanzamos una excepcion
+    # Tras obtener los parametros recibidos pasamos a validar que al menos uno de los campos a actualizar esta entre ellos.
+    # Si no se recibe ningun parametro, lanzamos una excepcion
     if 'text' not in data or 'checked' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't update the todo item.")
