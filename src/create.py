@@ -10,7 +10,7 @@ def create(event, context):
     if 'text' not in data:
         logging.error("Validation failed")
         raise Exception("Couldn't create the todo item.")
-    # Una vez validado anyadimos el registro en la tabla    
+    # Una vez validado anyadimos el registro en la tabla
     item = todoList.put_item(data['text'])
     # create a response with id as part of response
     response = {
