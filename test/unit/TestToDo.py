@@ -66,11 +66,19 @@ class TestDatabaseFunctions(unittest.TestCase):
         print('Table name:' + self.table.name)
         tableName = os.environ['DYNAMODB_TABLE'];
         from src.todoList import get_table
-        tableTest = get_table(None)
+        tableTest = get_table(False)
         # check if the table name is 'ToDo'
         self.assertIn(tableName, tableTest.name)
         #self.assertIn('todoTable', self.table_local.name)
         print ('End: test_table_exists')    
+
+    def test_get_item_error(self):
+        print ('---------------------')
+        print ('Start: test_get_item_error')
+        # Testing file functions
+        from src.todoList import get_item
+        self.assertRaises(Exception, get_item('', None))
+        print ('End: test_get_item_error')
 
     def test_put_todo(self):
         print ('---------------------')
@@ -93,7 +101,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         from src.todoList import put_item
         # Table mock
         self.assertRaises(Exception, put_item("", self.dynamodb))
-        self.assertRaises(Exception, put_item("", self.dynamodb))
+        self.assertRaises(Exception, put_item(0, self.dynamodb)) 
         print ('End: test_put_todo_error')
 
     def test_get_todo(self):
