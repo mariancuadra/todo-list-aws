@@ -56,7 +56,6 @@ pipeline {
         always { 
             echo 'Clean env: delete dir'
             cleanWs()
-            sh 'ls -la'
         }
     }
 }
