@@ -37,7 +37,6 @@ pipeline {
             steps{
                 echo 'Initiating Deployment'
                 sh "bash pipelines/common-steps/deploy.sh"
-                sh 'ls -la'
             }
         }
         stage('Integration Test after deploy'){
