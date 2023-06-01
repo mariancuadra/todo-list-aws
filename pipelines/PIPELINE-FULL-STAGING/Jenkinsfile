@@ -37,6 +37,7 @@ pipeline {
             steps{
                 echo 'Initiating Deployment'
                 sh "bash pipelines/common-steps/deploy.sh"
+                sh 'ls -la'
             }
         }
         stage('Integration Test after deploy'){
@@ -56,6 +57,7 @@ pipeline {
         always { 
             echo 'Clean env: delete dir'
             cleanWs()
+            sh 'ls -la'
         }
     }
 }
