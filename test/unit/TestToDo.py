@@ -72,7 +72,7 @@ class TestDatabaseFunctions(unittest.TestCase):
 
         print('Table name:' + self.table.name)
         tableName = os.environ['DYNAMODB_TABLE'];
-        os.environ['ENDPOINT_OVERRIDE'] = 'http://127.0.0.1:8000'
+        #os.environ['ENDPOINT_OVERRIDE'] = 'http://127.0.0.1:8000'
         from src.todoList import get_table
         tableTest = get_table(False)
         # check if the table name is 'ToDo'
