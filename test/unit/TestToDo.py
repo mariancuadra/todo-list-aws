@@ -48,7 +48,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('---------------------')
         print ('Start: test_create_table_error')
         from src.todoList import create_todo_table
-        self.table = create_todo_table(self.dynamodb)
+        self.assertRaises(Exception,create_todo_table(self.dynamodb))
         print ('End: test_create_table_error')
         
     def test_table_exists(self):
