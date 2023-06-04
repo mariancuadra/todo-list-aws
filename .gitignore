@@ -5,4 +5,4 @@ tests
 pyenvunittests
 .coverage
 coverage.xml
-todo-list-aws
+todo-list-aws/
